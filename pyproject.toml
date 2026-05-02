@@ -16,6 +16,8 @@ keywords = ["verifiable-compute", "zkvm", "audit-chain", "ai-agents", "complianc
 veritas-prove = "veritas.cli.main:main"
 veritas-verify = "veritas.cli.verify:main"
 veritas-collectord = "veritas.cli.collect:main"
+veritas-policy-dryrun = "veritas.cli.policy_dryrun:main"
+veritas-provernet-sim = "veritas.cli.provernet_sim:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

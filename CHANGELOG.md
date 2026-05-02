@@ -9,3 +9,6 @@
 - Started Iteration-1 collector implementation with `veritas-collectord`.
 - Added intent-based write dedup and MMR append/proof/finalize APIs.
 - Added CVT suite for FR-COLL-2/3/4/6 and stability smoke test.
+- Added policy composition and dry-run simulation flows (FR-POL-2/3).
+- Added Iteration-2 prover-network simulation (race, recursive aggregation, slashing).
+- Added CI workflow covering tests, collector CVT run, policy dry-run, and burst simulation.

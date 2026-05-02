@@ -1,0 +1,42 @@
+name: veritas-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+      - name: Unit and Integration Tests
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m unittest discover -s tests -v
+      - name: Iteration 1 collector CVT run
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m veritas.cli.collect --trace examples/session_trace_iteration1.json --out collector-session.json
+      - name: Policy dry-run gate
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m veritas.cli.policy_dryrun --policy examples/policy_allow_all.pdl --trace examples/session_trace.json --out policy-dryrun-report.json
+      - name: Prover network burst simulation
+        env:
+          PYTHONPATH: src
+        run: |
+          python scripts/perf_burst.py
+

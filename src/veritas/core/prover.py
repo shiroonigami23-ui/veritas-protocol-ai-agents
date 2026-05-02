@@ -6,23 +6,18 @@ from dataclasses import asdict
 from pathlib import Path
 
 from .models import SessionResult
-from .pdl import compile_policy_to_circuit, parse_policy
+from .pdl import parse_policy
+from .policy_engine import compose_policies, evaluate_rules
 from .trace import compute_final_code_state_root, compute_trace_root, load_trace
-
-def evaluate_policy(rules, events):
-    violations = []
-    syscalls = [e.syscall for e in events]
-    for r in rules:
-        if r.target_type == 'syscall' and r.action == 'deny' and r.value in syscalls:
-            violations.append(f"Denied syscall observed: {r.value}")
-    return (len(violations) == 0, violations)
 
 def prove(trace_file: str, policy_file: str, output_file: str) -> dict:
     started = time.time()
     events = load_trace(trace_file)
-    rules = parse_policy(Path(policy_file).read_text(encoding='utf-8'))
-    circuit = compile_policy_to_circuit(rules)
-    compliant, violations = evaluate_policy(rules, events)
+    policy_text = Path(policy_file).read_text(encoding='utf-8')
+    rules = parse_policy(policy_text)
+    circuit = compose_policies([policy_text])
+    policy_eval = evaluate_rules(rules, trace_file)
+    compliant, violations = policy_eval.compliant, policy_eval.violations
     session = SessionResult(
         session_uuid=str(uuid.uuid4()),
         trace_root=compute_trace_root(events),

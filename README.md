@@ -16,6 +16,15 @@ It now also includes an **Iteration 1 collector prototype**:
 - streaming append-only MMR API: `append`, `get_proof`, `finalize`.
 - CVT suite mapped to `FR-COLL-2/3/4/6`.
 
+It now includes a substantial **Iteration 2 prover-network simulation**:
+- distributed proof-race mempool simulation (`FR-PROV-1`).
+- recursive proof aggregation abstraction (`FR-PROV-2`).
+- cut-and-choose slashing simulation (`FR-PROV-3`).
+
+It now includes **Policy module expansion**:
+- multi-policy composition (org + repo + intent) (`FR-POL-2`).
+- dry-run policy evaluation reports against recorded traces (`FR-POL-3`).
+
 ## Architecture
 - `src/veritas/core`: trace loading, commitment roots, policy parsing, proving logic.
 - `src/veritas/mock_chain`: verifier/attestation simulation.
@@ -34,6 +43,8 @@ It now also includes an **Iteration 1 collector prototype**:
 python -m pip install -e .
 veritas-prove --trace examples/session_trace.json --policy examples/policy_allow_all.pdl --out proof.json --anchor
 veritas-collectord --trace examples/session_trace_iteration1.json --out collector-session.json
+veritas-policy-dryrun --policy examples/policy_allow_all.pdl --policy examples/policy_deny_execve.pdl --trace examples/session_trace.json --out policy-dryrun-report.json
+veritas-provernet-sim --trace-root trace-root-1 --policy-root policy-root-1 --trace-size 1400
 ```
 
 ## Test
@@ -43,8 +54,10 @@ python -m unittest discover -s tests -v
 
 ## Requirement Traceability
 - `FR-POL-1`: PDL parsing + deterministic compile root in `src/veritas/core/pdl.py`.
+- `FR-POL-2/3`: policy composition and dry-run reporting in `src/veritas/core/policy_engine.py`.
 - `FR-COLL-4` (prototype abstraction): append-only deterministic event commitments in `src/veritas/core/trace.py`.
 - `FR-COLL-2/3/4/6` (Iteration-1 collector prototype): `src/veritas/collector/*` and `tests/test_collector_cvt.py`.
+- `FR-PROV-1/2/3`: simulated prover network in `src/veritas/prover_network/network.py`.
 - `FR-CHAIN-1/2` (prototype abstraction): `verify_and_attest` flow in `src/veritas/mock_chain/chain.py`.
 - `Iteration 0 Exit Gate`: scenario test in `tests/test_prover.py`.
 

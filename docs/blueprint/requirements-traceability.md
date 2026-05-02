@@ -12,8 +12,17 @@
   - Tests: `tests/test_collector_cvt.py`
 - FR-POL-1:
   - Implemented in `src/veritas/core/pdl.py`.
+- FR-POL-2:
+  - Implemented policy composition in `src/veritas/core/policy_engine.py`.
+- FR-POL-3:
+  - Implemented dry-run report generation in `src/veritas/core/policy_engine.py` and `src/veritas/cli/policy_dryrun.py`.
 - FR-PROV-1:
   - Simplified local proving job lifecycle in `src/veritas/core/prover.py`.
+  - Distributed proof-race simulation in `src/veritas/prover_network/network.py`.
+- FR-PROV-2:
+  - Recursive aggregation abstraction in `src/veritas/prover_network/network.py`.
+- FR-PROV-3:
+  - Cut-and-choose slashing simulation in `src/veritas/prover_network/network.py`.
 - FR-CHAIN-1 / FR-CHAIN-2:
   - Simulated verify-and-attest in `src/veritas/mock_chain/chain.py`.
 
@@ -32,3 +41,11 @@
   - Dedup engine implemented and covered with focused tests.
 - Stability signal:
   - Multi-session stability smoke in `tests/test_iteration1_stability.py`.
+
+## Iteration 2 Progress
+- Prover race and winner selection:
+  - `tests/test_prover_network.py::test_race_and_aggregation`
+- Recursive aggregation:
+  - `tests/test_prover_network.py::test_race_and_aggregation`
+- Slashing control:
+  - `tests/test_prover_network.py::test_cut_and_choose_slashing`

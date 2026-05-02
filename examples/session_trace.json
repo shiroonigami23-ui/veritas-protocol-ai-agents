@@ -1,0 +1,7 @@
+[
+  {"monotonic_timestamp_ns": 1000, "pid": 1200, "tid": 1200, "syscall": "write", "arguments": {"path": "app.py"}, "return_value": 18},
+  {"monotonic_timestamp_ns": 2000, "pid": 1200, "tid": 1201, "syscall": "write", "arguments": {"path": "requirements.txt"}, "return_value": 12},
+  {"monotonic_timestamp_ns": 3000, "pid": 1200, "tid": 1202, "syscall": "write", "arguments": {"path": "test_app.py"}, "return_value": 19},
+  {"monotonic_timestamp_ns": 4000, "pid": 1200, "tid": 1200, "syscall": "execve", "arguments": {"cmd": "black ."}, "return_value": 0},
+  {"monotonic_timestamp_ns": 5000, "pid": 1200, "tid": 1200, "syscall": "execve", "arguments": {"cmd": "pytest -q"}, "return_value": 0}
+]

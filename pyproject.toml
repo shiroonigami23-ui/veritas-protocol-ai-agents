@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veritas-protocol"
+version = "0.1.0"
+description = "Iteration-0 prototype of the Veritas verifiable AI agent audit chain"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Veritas Core Architecture Team" }]
+license = { file = "LICENSE" }
+keywords = ["verifiable-compute", "zkvm", "audit-chain", "ai-agents", "compliance"]
+
+[project.scripts]
+veritas-prove = "veritas.cli.main:main"
+veritas-verify = "veritas.cli.verify:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

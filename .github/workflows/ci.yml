@@ -39,4 +39,18 @@ jobs:
           PYTHONPATH: src
         run: |
           python scripts/perf_burst.py
-
+      - name: Build proof artifact for Iteration 3 checks
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m veritas.cli.main --trace examples/session_trace.json --policy examples/policy_allow_all.pdl --out proof.json --anchor --bundle-out proof-bundle.json
+      - name: Generate CI status artifact
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m veritas.cli.ci_status --proof proof-bundle.json --out veritas-status.json
+      - name: Generate dashboard snapshot
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m veritas.cli.dashboard_snapshot --proof proof-bundle.json --out dashboard-snapshot.json

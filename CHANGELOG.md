@@ -12,3 +12,6 @@
 - Added policy composition and dry-run simulation flows (FR-POL-2/3).
 - Added Iteration-2 prover-network simulation (race, recursive aggregation, slashing).
 - Added CI workflow covering tests, collector CVT run, policy dry-run, and burst simulation.
+- Added Iteration-3 foundation modules for selective-disclosure VCC and offline verification.
+- Added CI status artifact generator and compliance dashboard snapshot generator.
+- Added new CLIs: `veritas-vcc-build`, `veritas-vcc-verify`, `veritas-ci-status`, `veritas-dashboard-snapshot`.

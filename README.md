@@ -25,6 +25,11 @@ It now includes **Policy module expansion**:
 - multi-policy composition (org + repo + intent) (`FR-POL-2`).
 - dry-run policy evaluation reports against recorded traces (`FR-POL-3`).
 
+It now includes **Iteration 3 integration foundations**:
+- selective-disclosure VCC build + offline verify flow (`FR-CHAIN-3` foundation).
+- CI status artifact generator for PR status checks.
+- compliance dashboard snapshot generator.
+
 ## Architecture
 - `src/veritas/core`: trace loading, commitment roots, policy parsing, proving logic.
 - `src/veritas/mock_chain`: verifier/attestation simulation.
@@ -45,6 +50,10 @@ veritas-prove --trace examples/session_trace.json --policy examples/policy_allow
 veritas-collectord --trace examples/session_trace_iteration1.json --out collector-session.json
 veritas-policy-dryrun --policy examples/policy_allow_all.pdl --policy examples/policy_deny_execve.pdl --trace examples/session_trace.json --out policy-dryrun-report.json
 veritas-provernet-sim --trace-root trace-root-1 --policy-root policy-root-1 --trace-size 1400
+veritas-vcc-build --proof proof-bundle.json --workspace examples/workspace_sample --module src_main.py --out vcc.json
+veritas-vcc-verify --vcc vcc.json
+veritas-ci-status --proof proof-bundle.json --out veritas-status.json
+veritas-dashboard-snapshot --proof proof-bundle.json --out dashboard-snapshot.json
 ```
 
 ## Test
@@ -59,6 +68,7 @@ python -m unittest discover -s tests -v
 - `FR-COLL-2/3/4/6` (Iteration-1 collector prototype): `src/veritas/collector/*` and `tests/test_collector_cvt.py`.
 - `FR-PROV-1/2/3`: simulated prover network in `src/veritas/prover_network/network.py`.
 - `FR-CHAIN-1/2` (prototype abstraction): `verify_and_attest` flow in `src/veritas/mock_chain/chain.py`.
+- `FR-CHAIN-3` foundation: selective disclosure credential in `src/veritas/compliance/vcc.py`.
 - `Iteration 0 Exit Gate`: scenario test in `tests/test_prover.py`.
 
 ## Roadmap

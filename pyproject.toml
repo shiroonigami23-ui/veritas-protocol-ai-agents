@@ -18,6 +18,10 @@ veritas-verify = "veritas.cli.verify:main"
 veritas-collectord = "veritas.cli.collect:main"
 veritas-policy-dryrun = "veritas.cli.policy_dryrun:main"
 veritas-provernet-sim = "veritas.cli.provernet_sim:main"
+veritas-vcc-build = "veritas.cli.vcc_build:main"
+veritas-vcc-verify = "veritas.cli.vcc_verify:main"
+veritas-ci-status = "veritas.cli.ci_status:main"
+veritas-dashboard-snapshot = "veritas.cli.dashboard_snapshot:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

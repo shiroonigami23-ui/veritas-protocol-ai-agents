@@ -25,6 +25,11 @@
   - Cut-and-choose slashing simulation in `src/veritas/prover_network/network.py`.
 - FR-CHAIN-1 / FR-CHAIN-2:
   - Simulated verify-and-attest in `src/veritas/mock_chain/chain.py`.
+- FR-CHAIN-3:
+  - Selective disclosure credential and offline verification foundation in:
+    - `src/veritas/compliance/vcc.py`
+    - `src/veritas/cli/vcc_build.py`
+    - `src/veritas/cli/vcc_verify.py`
 
 ## Iteration 0 Exit Criteria Mapping
 1. Proof generated for 3 modified files and 2 external commands.
@@ -49,3 +54,11 @@
   - `tests/test_prover_network.py::test_race_and_aggregation`
 - Slashing control:
   - `tests/test_prover_network.py::test_cut_and_choose_slashing`
+
+## Iteration 3 Foundation Progress
+- VCC selective disclosure and offline verification:
+  - `tests/test_vcc.py::test_build_and_verify_vcc`
+- CI status artifact generation:
+  - `tests/test_ci_status.py::test_status_verified`
+- Dashboard compliance snapshot:
+  - `tests/test_dashboard_snapshot.py::test_build_snapshot`

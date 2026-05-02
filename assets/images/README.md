@@ -1,2 +1,2 @@
-# Images
-Wikimedia and Wikipedia sourced diagrams used in documentation.
+﻿# Images
+Reference still images used across docs and presentations.

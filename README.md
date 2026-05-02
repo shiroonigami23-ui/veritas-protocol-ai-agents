@@ -21,20 +21,13 @@ It now also includes an **Iteration 1 collector prototype**:
 - `src/veritas/mock_chain`: verifier/attestation simulation.
 - `src/veritas/cli`: CLI entry points.
 
-## Project Images (Wikipedia/Wikimedia)
-### Merkle Commitments (MMR inspiration)
-![Merkle Tree](assets/images/merkle_tree.png)
+## Visual Showcase
+![Veritas Hero](assets/media/veritas-hero.png)
 
-### Cryptographic Context
-![Cryptography](assets/images/cryptography.jpg)
-
-### Security and Runtime Layering
-![Computer Security](assets/images/computer_security.png)
-
-### Linux Runtime Foundation
-![Linux](assets/images/linux.png)
-
-Attribution: [assets/images/ATTRIBUTION.md](assets/images/ATTRIBUTION.md)
+### Animated System Views
+![Pipeline Flow](assets/media/pipeline-flow.gif)
+![Merkle Growth](assets/media/merkle-growth.gif)
+![Chain Pulse](assets/media/chain-pulse.gif)
 
 ## Quickstart
 ```bash

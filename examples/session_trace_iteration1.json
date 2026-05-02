@@ -1,0 +1,8 @@
+[
+  {"monotonic_timestamp_ns": 1000, "pid": 2200, "tid": 2200, "syscall": "write", "arguments": {"fd": 5, "offset": 0, "path": "src/app.py", "data": "a"}, "return_value": 1},
+  {"monotonic_timestamp_ns": 1100, "pid": 2200, "tid": 2200, "syscall": "write", "arguments": {"fd": 5, "offset": 0, "path": "src/app.py", "data": "ab"}, "return_value": 2},
+  {"monotonic_timestamp_ns": 1200, "pid": 2200, "tid": 2200, "syscall": "write", "arguments": {"fd": 5, "offset": 0, "path": "src/app.py", "data": "abc"}, "return_value": 3},
+  {"monotonic_timestamp_ns": 1300, "pid": 2200, "tid": 2200, "syscall": "execve", "arguments": {"cmd": "black ."}, "return_value": 0},
+  {"monotonic_timestamp_ns": 1400, "pid": 2200, "tid": 2200, "syscall": "close", "arguments": {"fd": 5}, "return_value": 0},
+  {"monotonic_timestamp_ns": 1500, "pid": 2200, "tid": 2200, "syscall": "exit_group", "arguments": {}, "return_value": 0}
+]

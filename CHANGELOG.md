@@ -6,3 +6,6 @@
 - Added PDL parser/compiler stage and deterministic trace commitments.
 - Added 3-node mock chain verify/anchor simulation.
 - Added unit and integration tests mapped to blueprint acceptance criteria.
+- Started Iteration-1 collector implementation with `veritas-collectord`.
+- Added intent-based write dedup and MMR append/proof/finalize APIs.
+- Added CVT suite for FR-COLL-2/3/4/6 and stability smoke test.

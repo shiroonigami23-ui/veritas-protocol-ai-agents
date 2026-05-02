@@ -1,0 +1,2 @@
+"""Collector sidecar package."""
+

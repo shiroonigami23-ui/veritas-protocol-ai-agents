@@ -1,4 +1,4 @@
-# Veritas Protocol
+# Veritas Internet Protocol
 
 A self-sovereign, verifiable compute audit chain for agentic AI code generation.
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Veritas Protocol banner" width="100%">
+<img src="assets/banner.gif" alt="Veritas Protocol animated banner" width="100%">
 
 # 🔏 Veritas Protocol
 
@@ -21,10 +21,10 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="assets/media/veritas-hero.png" alt="preview" width="45%">
   <img src="assets/media/pipeline-flow.gif" alt="preview" width="45%">
   <img src="assets/media/merkle-growth.gif" alt="preview" width="45%">
   <img src="assets/media/chain-pulse.gif" alt="preview" width="45%">
+  <img src="assets/media/veritas-hero.png" alt="preview" width="45%">
 </p>
 
 ## 📖 Overview
@@ -223,13 +223,13 @@ See [CHANGELOG.md](CHANGELOG.md) for the release history.
 
 ## 📄 License
 
-Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
+Distributed under the **MIT** license. See [LICENSE](LICENSE) for details.
 
 ## 👤 Author
 
 **Aryan Singh Chandel** (Shiro)
 
-[![GitHub](https://img.shields.io/badge/GitHub-shiroonigami23-ui-181717?style=flat-square&logo=github)](https://github.com/shiroonigami23-ui)
+[![GitHub](https://img.shields.io/badge/GitHub-shiroonigami23--ui-181717?style=flat-square&logo=github)](https://github.com/shiroonigami23-ui)
 
 <div align="center">
 

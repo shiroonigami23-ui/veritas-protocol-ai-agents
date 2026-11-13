@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.gif" alt="Veritas Protocol animated banner" width="100%">
+<img src="assets/media/pipeline-flow.gif" alt="Veritas Protocol" width="100%">
 
 # 🔏 Veritas Protocol
 
@@ -21,7 +21,6 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="assets/media/pipeline-flow.gif" alt="preview" width="45%">
   <img src="assets/media/merkle-growth.gif" alt="preview" width="45%">
   <img src="assets/media/chain-pulse.gif" alt="preview" width="45%">
   <img src="assets/media/veritas-hero.png" alt="preview" width="45%">
